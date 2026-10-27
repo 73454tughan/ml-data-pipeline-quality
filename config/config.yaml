@@ -1,0 +1,44 @@
+dataset_name: adult
+openml_version: 2
+random_seed: 42
+train_split_ratio: 0.7
+test_split_ratio: 0.3
+target_column: income
+features:
+  numerical:
+  - age
+  - fnlwgt
+  - education-num
+  - capital-gain
+  - capital-loss
+  - hours-per-week
+  categorical:
+  - workclass
+  - education
+  - marital-status
+  - occupation
+  - relationship
+  - race
+  - sex
+  - native-country
+engineered_features:
+- capital_net
+- hours_per_age
+pipeline_version: 1.0.0
+data_hashes:
+  processed_train_sha256: 8420893dbcd2fc6a297e31bda93fb13d28a91fb6bf49e5b42d197095568a5b33
+  processed_test_sha256: d175a1428889ffd9d0172af91d6e84d1509ae81b0955a00c17793962a047e48d
+metrics:
+  without_derived_features:
+    accuracy: 0.854
+    f1: 0.6601
+    precision: 0.7448
+    recall: 0.5927
+  with_derived_features:
+    accuracy: 0.8578
+    f1: 0.6696
+    precision: 0.7537
+    recall: 0.6024
+  delta:
+    accuracy_change: 0.0038
+    f1_change: 0.0095
